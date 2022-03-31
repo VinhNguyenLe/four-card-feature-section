@@ -1,0 +1,25 @@
+@mixin mobile(){
+    @media screen and (max-width: $mobileWidth) {
+        @content;
+    }
+}
+
+@mixin title($fontSize, $fontWeight, $color) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+}
+
+@mixin card($color) {
+    padding: 36px;
+    border-top: 4px solid $color;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 12px 26px -8px #4c4e5c75;
+    margin: 20px;
+    @include mobile{
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+}
+

@@ -1,0 +1,108 @@
+@import "./variable";
+@import "./reset";
+@import "./mixin";
+
+body{
+    background-color: $lightGray;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrap{
+    width: 100%;
+}
+
+.title{
+    max-width: 530px;
+    margin: 64px auto 0;
+    text-align: center;
+    font-size: 15px;
+    @include mobile{
+        padding: 0 24px;
+    }
+    &-light{
+        @include title(32px, 200, $darkBlue);
+        @include mobile{
+            font-size: 24px
+        }
+    }
+    &-bold{
+        @include title(32px, 600, $darkBlue);
+        margin-bottom: 24px;
+        @include mobile{
+            font-size: 24px;
+        }
+    }
+    &-small{
+        @include title(15px, 400, $grayishBlue);
+        line-height: 1.4;
+        margin-bottom: 54px;
+    }
+}
+.card{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    @include mobile{
+        flex-direction: column;
+    }
+
+    &-items{
+        flex: 1;
+    }
+    &-item{
+        & h2{
+            @include title(21px, 600, $darkBlue);
+            margin-bottom: 10px;
+        }
+
+        & p{
+            @include title(15px, 400, $grayishBlue);
+            margin-bottom: 40px;
+        }
+
+        & img{
+            float: right
+        }
+
+        &-1{
+            @include card($cyan);
+        }
+
+        &-2{
+            @include card($red);
+            @include mobile{
+                margin-bottom: 40px;
+            }
+        }
+
+        &-3{
+            @include card($orange); 
+        }
+
+        &-4{
+            @include card($blue);
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    line-height: 1.4;
+    margin: 42px auto 12px;
+    text-align: center;
+    color: $darkBlue;
+    & p a{
+        color: $darkBlue;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    @include mobile{
+        padding: 0 24px;
+    }
+}
